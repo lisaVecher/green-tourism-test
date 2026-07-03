@@ -1,0 +1,37 @@
+{
+  "name": "green-tourism-test",
+  "version": "1.0.0",
+  "description": "Backend API for Green Tourism project",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisaVecher/green-tourism-test.git"
+  },
+  "keywords": [],
+  "author": "Yelyzaveta Vecherovska <vecheli0306@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisaVecher/green-tourism-test/issues"
+  },
+  "homepage": "https://github.com/lisaVecher/green-tourism-test#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "http-errors": "^2.0.1",
+    "joi": "^18.2.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.7.3",
+    "pino-http": "^11.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
