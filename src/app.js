@@ -2,14 +2,18 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import pino from "pino-http";
 
-import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
-import storyRoutes from "./routes/storyRoutes.js";
+import {
+  authRouter,
+  userRouter,
+  storiesRouter,
+  categoriesRouter,
+} from "./routes/index.js";
 
-import { notFoundHandler } from "./middlewares/notFoundHandler.js";
-import { errorHandler } from "./middlewares/errorHandler.js";
+import { logger } from "./middleware/logger.js";
+
+import { notFoundHandler } from "./middleware/notFoundHandler.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 dotenv.config();
 
@@ -27,9 +31,10 @@ app.use(
 
 app.use(pino());
 
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/stories", storyRoutes);
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
+app.use("/api/stories", storiesRouter);
+app.use("/api/categories", categoriesRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
